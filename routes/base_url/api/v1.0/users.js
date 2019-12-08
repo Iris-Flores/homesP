@@ -6,6 +6,7 @@ var router = express.Router();
 var crypto = require('crypto');
 var jwt = require("jsonwebtoken");
 var keycyfer = "password12345proyect";
+
 function verifytoken(req, res, next){
   //recibir token
   const header = req.headers["authorization"];

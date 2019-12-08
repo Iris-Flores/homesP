@@ -7,7 +7,7 @@ var router = express.Router();
 router.post("/neighborhood", async(req, res, next) => {
   var paramsV = req.body;
   // no repite vecindario
-  var docs = await Vecindario.find({nameNeighborhood: paramsV.nameNeighborhood, img: paramsV.img});
+  var docs = await Vecindario.find({nameN: paramsV.nameN, img: paramsV.img});
   if(docs.length >= 1){
     res.status(300).json({
       "msn":"nombre de vecindario e imagen incorrecto"
@@ -19,8 +19,8 @@ router.post("/neighborhood", async(req, res, next) => {
     res.status(200).json(paramsV);
   });
 });
-//mostrar vecindario
-/*router.get("/neighborhood", (req, res, next) => {
+//listar vecindario
+router.get("/neighborhood", (req, res, next) => {
   var paramsV = req.query;
   var SKIP = 0;
   var LIMIT = 10;
@@ -52,8 +52,8 @@ router.post("/neighborhood", async(req, res, next) => {
     res.status(200).json(docs);
   });
 });
-//modificar usuarios
-router.patch("/neighborhood", (req, res, next) => {
+//modificar 
+/*router.patch("/neighborhood", (req, res, next) => {
   var paramsV = req.query;
   var data = req.body;
   if(paramsV.id == null){
@@ -94,6 +94,6 @@ router.delete("/neighborhood", (req, res, next) => {
       return;
     }
     res.status(300).json(docs);
-  })
+  })neighborhood
 });*/
 module.exports = router;

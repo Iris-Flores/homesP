@@ -1,7 +1,7 @@
 const mongooseN = require("../connect");
 var neighborSchema = {
-  nameNeighborhood : String,
+  nameN : String,
   img : String
 };
 var neighborhood = mongooseN.model("neighborhood", neighborSchema);
-module.exports = {neighborhood : neighborhood, keysV: ["nameNeighborhood", "img"]};
+module.exports = {neighborhood : neighborhood, keysV: ["nameN", "img"]};
